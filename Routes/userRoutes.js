@@ -14,5 +14,8 @@ router.post("/",
 router.get("/:id",
     UserController.GetUser
 )
+router.get("/",
+UserController.GetUsers
+)
 
 module.exports = router;

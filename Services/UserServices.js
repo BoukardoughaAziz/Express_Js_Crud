@@ -18,7 +18,20 @@ module.exports.GetUser = async ({id}) => {
       let users = await User.findById(id);
       return users; 
    } catch (error) {
-      console.log('Une erreur est survenue lors de l\'ajout de l\'utilisateur :', error);
+      console.log('Une erreur est survenue lors de la recherche de l\'utilisateur :', error);
+      throw new Error(error);
+   }
+};
+
+
+
+
+module.exports.GetUsers = async ({id}) => {
+   try {
+      let users = await User.find({})
+      return users; 
+   } catch (error) {
+      console.log('Une erreur est survenue lors de la recherche de l\'utilisateur :', error);
       throw new Error(error);
    }
 };
