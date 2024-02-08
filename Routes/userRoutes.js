@@ -18,4 +18,8 @@ router.get("/",
 UserController.GetUsers
 )
 
+router.delete("/:id",
+UserController.DeleteUser
+)
+
 module.exports = router;

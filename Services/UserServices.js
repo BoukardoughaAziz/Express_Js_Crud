@@ -35,3 +35,15 @@ module.exports.GetUsers = async ({id}) => {
       throw new Error(error);
    }
 };
+
+
+
+module.exports.DeleteUser = async ({id}) => {
+   try {
+      let users = await User.findByIdAndDelete(id);
+      return users; 
+   } catch (error) {
+      console.log('Une erreur est survenue lors de la recherche de l\'utilisateur :', error);
+      throw new Error(error);
+   }
+};
